@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação: Encontro</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Badge -->
+        <div class="badge">
+            Operação: Encontro • v2.0
+        </div>
+
+        <!-- Card principal -->
+        <section class="hero" id="step1">
+            <span class="mission-tag">🚨 Convite Oficial</span>
+            <h1>Você foi selecionada para participar de uma missão exclusiva.</h1>
+            <p class="subtitle">Após inúmeras reuniões do comitê organizador (ou seja, eu pensando demais), concluímos que seria uma ótima ideia te chamar para sair.</p>
+            
+            <div class="mission-info">
+                <div class="info-card">
+                    <span>🕕</span>
+                    <div><h3>Início</h3><p>18:00</p></div>
+                </div>
+                <div class="info-card">
+                    <span>🚌</span>
+                    <div><h3>Fase 1</h3><p>BRT até a estação</p></div>
+                </div>
+                <div class="info-card">
+                    <span>🚕</span>
+                    <div><h3>Fase 2</h3><p>Uber até o destino</p></div>
+                </div>
+            </div>
+
+            <div class="briefing">
+                <h2>📋 O que está incluso:</h2>
+                <ul>
+                    <li>🍟 Compartilhamento "não autorizado" de batatas fritas</li>
+                    <li>💬 Conversas sobre qualquer assunto aleatório</li>
+                    <li>😂 Piadas ruins em quantidade moderada</li>
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button class="btn primary" id="startBtn">Aceitar a Missão</button>
+                <button class="btn secondary" id="noBtn">Recusar</button>
+            </div>
+            <p class="footer-note" id="footerNote">*Ao aceitar, você concorda em participar de uma experiência com altos níveis de improviso.*</p>
+        </section>
+
+        <section class="hero hidden" id="step2">
+            <span class="mission-tag">📝 Parâmetros Operacionais</span>
+            <h1>Monte nosso roteiro.</h1>
+            <p class="subtitle">Selecione as variáveis para o sucesso da operação.</p>
+
+            <div class="form-group">
+                <h3>🍔 Etapa 1 – Alimentação</h3>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="comida" value="Hambúrguer" data-piada="🍔 Clássico. Zero chances de erro e risco alto de roubar minha batata." checked><span>🍔 Hambúrguer</span></label>
+                    <label class="option-card"><input type="radio" name="comida" value="Japonês" data-piada="🥢 Hashis a postos. Prometa não julgar minhas habilidades."><span>🍣 Japonês</span></label>
+                    <label class="option-card"><input type="radio" name="comida" value="Pizza" data-piada="🍕 A redonda que não decepciona nunca."><span>🍕 Pizza</span></label>
+                    <label class="option-card"><input type="radio" name="comida" value="Petisco" data-piada="🍟 Porções, palito de dente e muita conversa fiada."><span>🍟 Petisco</span></label>
+                    <label class="option-card"><input type="radio" name="comida" value="Sorvete" data-piada="🍦 Frio, doce e direto ao ponto."><span>🍦 Sorvete</span></label>
+                </div>
+                <p class="step-joke" id="joke-comida">🍔 Clássico. Zero chances de erro e risco alto de roubar minha batata.</p>
+            </div>
+
+            <div class="form-group">
+                <h3>🎉 Etapa 2 – Atividade</h3>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="atividade" value="Bar" data-piada="🍻 Aviso: grandes chances de revelações depois do primeiro drink." checked><span>🍻 Bar</span></label>
+                    <label class="option-card"><input type="radio" name="atividade" value="Fliperama" data-piada="🎮 Vou deixar você ganhar uma (mentira, sou competitivo)."><span>🎮 Fliperama</span></label>
+                    <label class="option-card"><input type="radio" name="atividade" value="Cinema" data-piada="🍿 A clássica arte de comer pipoca no escuro."><span>🎬 Cinema (de novo kkk)</span></label>
+                    <label class="option-card"><input type="radio" name="atividade" value="Kart" data-piada="🏎️ Alerta: instinto de piloto de fuga será ativado."><span>🏎️ Kart</span></label>
+                    <label class="option-card"><input type="radio" name="atividade" value="Parque de Diversões" data-piada="🎡 Adrenalina, algodão doce e competição pra ver quem grita mais."><span>🎢 Parque de Diversões</span></label>
+                </div>
+                <p class="step-joke" id="joke-atividade">🍻 Aviso: grandes chances de revelações depois do primeiro drink.</p>
+            </div>
+
+            <div class="form-group">
+                <h3>🌃 Etapa 3 – Encerramento</h3>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="encerramento" value="Sobremesa" data-piada="🍰 Você aceita compartilhar? (Resposta errada: não)." checked><span>🍨 Sobremesa</span></label>
+                    <label class="option-card"><input type="radio" name="encerramento" value="Volta ouvindo música" data-piada="🎵 Regra #1: proibido reclamar das músicas do motorista."><span>🚗 Ouvindo música</span></label>
+                    <label class="option-card"><input type="radio" name="encerramento" value="Vista bonita da cidade" data-piada="📸 Rende boas fotos e boas conversas."><span>🌇 Vista bonita</span></label>
+                    <label class="option-card"><input type="radio" name="encerramento" value="Caminhada" data-piada="👟 Haja fôlego e assunto pra colocar em dia."><span>🚶 Caminhada</span></label>
+                    <label class="option-card"><input type="radio" name="encerramento" value="Conversar até esquecer a hora" data-piada="🕰️ A melhor opção pra quem perde a noção do tempo."><span>💬 Conversar</span></label>
+                </div>
+                <p class="step-joke" id="joke-encerramento">🍰 Você aceita compartilhar? (Resposta errada: não).</p>
+            </div>
+
+            <div class="form-group">
+                <h3>🎲 Etapa 4 – Carta Especial</h3>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="carta" value="Confio em você" data-piada="😎 Entregando o controle pra quem fez um site só pra isso. Corajosa!" checked><span>❤️ Confio em você</span></label>
+                    <label class="option-card"><input type="radio" name="carta" value="Surpresa" data-piada="🎁 Fica tranquila, prometo que não é um sequestro."><span>🎁 Surpresa</span></label>
+                    <label class="option-card"><input type="radio" name="carta" value="Destino" data-piada="🎰 Que deus esteja do nosso lado."><span>🎰 Destino</span></label>
+                    <label class="option-card"><input type="radio" name="carta" value="Gato decide" data-piada="🐈 Miau."><span>🐈 Gato decide (sem gatos inclusos)</span></label>
+                </div>
+                <p class="step-joke" id="joke-carta">😎 Entregando o controle pra quem fez um site só pra isso. Corajosa!</p>
+            </div>
+
+            <div class="buttons">
+                <button class="btn primary" id="generateSummaryBtn">Gerar Relatório Final</button>
+            </div>
+        </section>
+
+        <section class="hero hidden" id="step3">
+            <span class="mission-tag">✅ Tudo Pronto</span>
+            <h1>Resumo da Operação</h1>
+            
+            <div class="summary-box">
+                <p><strong>🚗 Busca:</strong> 18h</p>
+                <p><strong>🍽️ Comida:</strong> <span id="resComida">...</span> <br><small id="resPiada" style="color: #9ca3af;"></small></p>
+                <p><strong>🎉 Atividade:</strong> <span id="resAtividade">...</span></p>
+                <p><strong>🌃 Final:</strong> <span id="resEncerramento">...</span></p>
+                <p><strong>🎲 Carta:</strong> <span id="resCarta">...</span></p>
+            </div>
+
+            <div class="briefing checklist">
+                <h2>🚦 Status do motorista:</h2>
+                <ul>
+                    <li>☑️ Separando a playlist</li>
+                    <li>☑️ Conferindo se passou perfume demais</li>
+                    <li>☑️ Tentando agir naturalmente</li>
+                    <li>⏳ Calculando quantas vezes vai olhar no espelho antes de sair</li>
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button class="btn primary" id="confirmMissionBtn">❤️ Confirmar Reserva via WhatsApp</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de confirmação da recusa -->
+    <div class="modal hidden" id="modal">
+        <div class="modal-content">
+
+            <div class="modal-emoji" id="modalEmoji">
+                🥺
+            </div>
+
+            <h2 id="modalTitle">
+                Tem certeza?
+            </h2>
+
+            <p id="modalText">
+                Eu passei tempo demais fazendo esse site...
+            </p>
+
+            <div class="modal-buttons">
+
+                <button class="btn secondary" id="cancelModal">
+                    ❤️ Voltar
+                </button>
+
+                <button class="btn primary" id="confirmNo">
+                    💔 Tenho certeza
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal hidden" id="jokeModal">
+        <div class="modal-content">
+            <div class="modal-emoji" id="jokeModalEmoji">🤔</div>
+            <h2 id="jokeModalTitle">Aviso do Sistema</h2>
+            <p id="jokeModalText">Texto da piada...</p>
+            
+            <div class="modal-buttons">
+                <button class="btn secondary" id="jokeCancelBtn">Cancelar</button>
+                <button class="btn primary" id="jokeConfirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

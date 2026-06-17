@@ -1,0 +1,363 @@
+/* =========================================
+   1. BASE E RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    /* Fundo escuro elegante (Dark Mode) */
+    background: radial-gradient(circle at top, #1f2937 0%, #111827 40%, #030712 100%);
+    color: #f9fafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    z-index: 2;
+}
+
+/* Utilitário para esconder as telas e o modal */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   2. ESTILOS PRINCIPAIS (HERO E CARDS)
+========================================= */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #9ca3af;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.hero {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: fadeIn 0.4s ease-out; /* Suaviza a troca de telas */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mission-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   3. INFORMAÇÕES DA MISSÃO (PASSO 1)
+========================================= */
+.mission-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-card span {
+    font-size: 2rem;
+}
+
+.info-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    color: #9ca3af;
+    margin: 0;
+}
+
+.briefing {
+    margin-bottom: 35px;
+}
+
+.briefing h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.briefing ul {
+    list-style: none;
+}
+
+.briefing li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-note {
+    margin-top: 30px;
+    text-align: center;
+    color: #9ca3af;
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   4. BOTÕES
+========================================= */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #f9fafb;
+    color: #111827;
+    font-weight: 600;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.12);
+}
+
+.secondary {
+    background: transparent;
+    color: #9ca3af;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.secondary:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+   5. OPÇÕES E ESCOLHAS (PASSO 2)
+========================================= */
+.form-group {
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.form-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #e5e7eb;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.option-card {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+/* Esconde o radio button padrão HTML */
+.option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Visual do botão não selecionado */
+.option-card span {
+    display: block;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    user-select: none;
+}
+
+.option-card:hover span {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Visual do botão selecionado */
+.option-card input[type="radio"]:checked + span {
+    background: #f9fafb;
+    color: #111827;
+    font-weight: 600;
+    border-color: #f9fafb;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   6. RESUMO FINAL (PASSO 3)
+========================================= */
+.summary-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.summary-box p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.summary-box p:last-child {
+    margin-bottom: 0;
+}
+
+.checklist li {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    border: none; /* Tira a linha de baixo no checklist */
+    padding: 8px 0;
+}
+
+/* =========================================
+   7. MODAL DE RECUSA
+========================================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 450px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+}
+
+.modal-emoji {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+.modal-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    flex: 1;
+}
+
+/* --- ESTILO DA PIADA DINÂMICA (PASSO 2) --- */
+.step-joke {
+    margin-top: 15px;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 18px;
+    border-radius: 12px;
+    border-left: 3px solid #4b5563;
+    animation: fadeIn 0.3s ease;
+}
+
+/* =========================================
+   8. RESPONSIVIDADE (CELULARES)
+========================================= */
+@media (max-width: 600px) {
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .buttons,
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .mission-info {
+        grid-template-columns: 1fr;
+    }
+}
