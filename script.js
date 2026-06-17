@@ -1,5 +1,5 @@
 // --- CONFIGURAÇÃO DO WHATSAPP ---
-const meuNumero = "5521976756782"; 
+const meuNumero = "5521976756782"; // Lembre-se de colocar seu número aqui
 
 // --- ELEMENTOS DO DOM ---
 const step1 = document.getElementById("step1");
@@ -14,8 +14,7 @@ const confirmMissionBtn = document.getElementById("confirmMissionBtn");
 const resComida = document.getElementById("resComida");
 const resPiada = document.getElementById("resPiada");
 const resAtividade = document.getElementById("resAtividade");
-const resEncerramento = document.getElementById("resEncerramento");
-const resCarta = document.getElementById("resCarta");
+const resAfter = document.getElementById("resAfter");
 
 // Elementos do Modal de Recusa
 const noBtn = document.getElementById("noBtn");
@@ -32,20 +31,16 @@ let tentativasRecusa = 0;
 // ===========================
 // LÓGICA DAS PIADAS DINÂMICAS
 // ===========================
-// Seleciona todos os radio buttons
 const radios = document.querySelectorAll('input[type="radio"]');
 
 radios.forEach(radio => {
     radio.addEventListener('change', (e) => {
-        // Encontra o grupo (comida, atividade, etc) do botão clicado
         const grupo = e.target.name; 
         const piadaTexto = e.target.dataset.piada;
         
-        // Atualiza a caixa de texto correspondente àquele grupo
         const caixaPiada = document.getElementById(`joke-${grupo}`);
         caixaPiada.textContent = piadaTexto;
         
-        // Efeito rápido de piscar para mostrar que mudou
         caixaPiada.style.animation = 'none';
         setTimeout(() => caixaPiada.style.animation = 'fadeIn 0.3s ease', 10);
     });
@@ -66,15 +61,13 @@ startBtn.addEventListener("click", () => {
 generateSummaryBtn.addEventListener("click", () => {
     const comidaInput = document.querySelector('input[name="comida"]:checked');
     const atividadeInput = document.querySelector('input[name="atividade"]:checked');
-    const encerramentoInput = document.querySelector('input[name="encerramento"]:checked');
-    const cartaInput = document.querySelector('input[name="carta"]:checked');
+    const afterInput = document.querySelector('input[name="after"]:checked');
 
     // Preenche o resumo final
     resComida.innerText = comidaInput.value;
     resPiada.innerText = `"${comidaInput.dataset.piada}"`;
     resAtividade.innerText = atividadeInput.value;
-    resEncerramento.innerText = encerramentoInput.value;
-    resCarta.innerText = cartaInput.value;
+    resAfter.innerText = afterInput.value;
 
     step2.classList.add("hidden");
     step3.classList.remove("hidden");
@@ -85,16 +78,14 @@ generateSummaryBtn.addEventListener("click", () => {
 confirmMissionBtn.addEventListener("click", () => {
     const comida = resComida.innerText;
     const atividade = resAtividade.innerText;
-    const encerramento = resEncerramento.innerText;
-    const carta = resCarta.innerText;
+    const after = resAfter.innerText;
 
     let texto = "🚨 *RESERVA CONFIRMADA: OPERAÇÃO ENCONTRO* 🚨\n\n";
     texto += "Roteiro aprovado pela diretoria:\n";
     texto += `🍽️ *Alimentação:* ${comida}\n`;
     texto += `🎉 *Atividade:* ${atividade}\n`;
-    texto += `🌃 *Encerramento:* ${encerramento}\n`;
-    texto += `🎲 *Carta Especial:* ${carta}\n\n`;
-    texto += "Pode preparar o carro. Nos vemos às 18h! 😎";
+    texto += `🌙 *After:* ${after}\n\n`;
+    texto += "Nos vemos às 18h! 😎";
 
     const mensagem = encodeURIComponent(texto);
     window.location.href = `https://wa.me/${meuNumero}?text=${mensagem}`;
